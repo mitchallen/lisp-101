@@ -1,0 +1,23 @@
+name: Run Lisp Program
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-lisp:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install SBCL
+      run: sudo apt-get install -y sbcl
+
+    - name: Run Lisp program
+      run: sbcl --script hello-world.lisp
