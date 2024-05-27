@@ -20,4 +20,4 @@ jobs:
       run: sudo apt-get install -y sbcl
 
     - name: Run Lisp program
-      run: sbcl --script hello-world.lisp
+      run: sbcl --script hello.lisp
